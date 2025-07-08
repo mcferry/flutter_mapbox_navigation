@@ -18,12 +18,7 @@ Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leav
   s.dependency 'MapboxNavigation', :git => 'https://github.com/mapbox/mapbox-navigation-ios.git', :tag => 'v3.10.0'
   
   s.platform = :ios, '16.6'
-  s.swift_version = '5.5'
+  s.swift_version = '5.0'
 
-  # MERGED: All xcconfig settings must be in one block.
-  s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/MapboxCommon/MapboxCommon.xcframework"/** "$(PODS_ROOT)/MapboxCoreMaps/MapboxCoreMaps.xcframework"/** "$(PODS_ROOT)/MapboxMaps/MapboxMaps.xcframework"/** "$(PODS_ROOT)/MapboxNavigation/MapboxNavigation.xcframework"/**'
-  }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
 end
